@@ -1,11 +1,11 @@
 var button = document.querySelector("button");
 var input1 = document.getElementById("num1")! as HTMLInputElement;
 var input2 = document.getElementById("num2")! as HTMLInputElement;
-function add(num1, num2) {
-    return +num1 + +num2;  //+ convert string to number
+function add(num1: number, num2: number) {   // tell compiler num1 type is number and same to num2 
+    return num1 + num2;  //+ convert string to number
 }
 button.addEventListener("click", function () {
-    console.log(add(input1.value, input2.value));
+    console.log(add(+input1.value, +input2.value));
 });
 
 // ! tell tsc compiler that there will be an input

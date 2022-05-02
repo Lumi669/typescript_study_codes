@@ -16,3 +16,10 @@ Note: change index.html as following:
 <!-- <script src="js-only.js" defer></script> -->
 
     <script src="using_ts.js" defer></script>
+
+# typescript syntax
+
+1. here use ! and type cast
+2. add implicit types in file, tell typescript the type of variable e.g number in this case
+   function add(num1: number, num2: number) {...}
+   now need to convert input1.value and input2.value to number by `+`
