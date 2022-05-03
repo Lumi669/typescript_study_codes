@@ -14,7 +14,23 @@
 //but in practice, it is good to let it inferr as bellow
 const person = {
     name: 'max',
-    age: 30
+    age: 30,
+    hobbies: ['Sports', 'Cooking']
 }
 
+// use ': string[]' to define type for array with string elements. 
+let favoriteActivities: string[];
+favoriteActivities = ['Sports', 'Singing'];
+
+// if array element types are not the same, use ': any[]' to define its type, but lost the typescript checking error power with any
+// let favoriteActivities: any[];
+// favoriteActivities = ['Sports', 1];
+
 console.log(person.name);
+
+//loop an array
+for (const hobby of person.hobbies){
+    console.log(hobby.toUpperCase()); //Typescript inferr that hobby is a string, so hobby. can show list of methods suitable for string
+
+    //console.log(hobby.map()); // shows error!!!
+}
