@@ -18,6 +18,14 @@ function printResult(num: number): void {
   console.log("Result " + num);
 }
 
+// the callback type is: (num: number) => void
+//NOTE: by saying the function type of callback is void, means we will ignore any result it might return //here. So, if the callback indeed return sth. Typescript will not show error .
+// therefor, line 42 return a value, but no error.
+function addAndHandle(n1: number, n2: number, callback: (num: number) => void) {
+  const result = n1 + n2;
+  callback(result);
+}
+
 printResult(add(5, 12));
 
 //how to write function type
@@ -28,3 +36,8 @@ combineValues = add; // ok
 //combineValues = printResult; //error!!!
 
 console.log(combineValues(8, 8));
+
+addAndHandle(10, 20, (result) => {
+  console.log(result);
+  return result;
+});
