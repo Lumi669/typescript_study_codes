@@ -1,7 +1,9 @@
 function combine(
   input1: number | string,
   input2: number | string,
-  resultConversion: string //use this allow caller of function to define how the result should be returned
+  //use this allow caller of function to define how the result should be returned
+  //now literal combine with union type, only one of the two strings are allowed for 3rd param
+  resultConversion: "as-number" | "as-text"
 ) {
   let result;
   if (
