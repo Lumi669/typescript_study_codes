@@ -1,9 +1,12 @@
+type Combinable = number | string; //type alias (conjunction with union type)
+type ConversionDescriptor = "as-number" | "as-text"; // alias type
+
 function combine(
-  input1: number | string,
-  input2: number | string,
+  input1: Combinable,
+  input2: Combinable,
   //use this allow caller of function to define how the result should be returned
   //now literal combine with union type, only one of the two strings are allowed for 3rd param
-  resultConversion: "as-number" | "as-text"
+  resultConversion: ConversionDescriptor
 ) {
   let result;
   if (
@@ -29,5 +32,5 @@ console.log(combinedAges);
 const combinedStringAges = combine("30", "26", "as-number");
 console.log(combinedStringAges + 1);
 
-const combinedNames = combine("rose", "ben", "as-string");
+const combinedNames = combine("rose", "ben", "as-text");
 console.log(combinedNames);
