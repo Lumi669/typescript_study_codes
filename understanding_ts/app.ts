@@ -1,43 +1,21 @@
-//set type of return value
-// function add(n1: number, n2: number): number {
-//   return n1 + n2;
-// }
+/*
+unkown type is strictive than any type. If not know which data type it is, then 
+use unkown, it can still add type check over any, see below codes in image, userName is string, userInput is unkown, even userInput is initialized as a string, still show error in line 19. However, can use if/else (line 21) to check. any data type is removing any type check, should avoid using it. 
+see bellow unkown type example
+*/
 
-//if there is no special reason, let Typescript infer return value type
-function add(n1: number, n2: number) {
-  return n1 + n2;
+let userInput: unknown;
+let userName: string;
+
+//userInput = 5;
+userInput = "max";
+//userInput = 9;
+
+userName = userInput;
+
+if (typeof userInput === "string") {
+  userName = userInput;
+  console.log("yes");
+} else {
+  console.log("no");
 }
-
-// void type, means that a function doesn't return anything
-//not necessary to write it down like
-// function printResult(num: number): void {
-//   console.log("Result " + num);
-// }
-
-function printResult(num: number): void {
-  console.log("Result " + num);
-}
-
-// the callback type is: (num: number) => void
-//NOTE: by saying the function type of callback is void, means we will ignore any result it might return //here. So, if the callback indeed return sth. Typescript will not show error .
-// therefor, line 42 return a value, but no error.
-function addAndHandle(n1: number, n2: number, callback: (num: number) => void) {
-  const result = n1 + n2;
-  callback(result);
-}
-
-printResult(add(5, 12));
-
-//how to write function type
-// a function name is combineValue, it has two parameters, both are number type and it return number.
-let combineValues: (a: number, b: number) => number;
-
-combineValues = add; // ok
-//combineValues = printResult; //error!!!
-
-console.log(combineValues(8, 8));
-
-addAndHandle(10, 20, (result) => {
-  console.log(result);
-  return result;
-});
