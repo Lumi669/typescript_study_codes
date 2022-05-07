@@ -5,5 +5,5 @@ console.log(userName);
 //must use ! at the end of the code here to tell typescript there is such element, otherwise show error
 const button = document.querySelector("button");
 button.addEventListener("click", () => {
-    console.log("apple");
+    console.log("apple are comming ...");
 });

@@ -103,6 +103,7 @@
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true /* Skip type checking all .d.ts files. */
   },
+  "exclude": ["./types"],
 
-  "files": ["app.ts", "aa/analytics.ts"]
+  "files": ["src/app.ts", "src/analytics.ts"]
 }
