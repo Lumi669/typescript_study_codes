@@ -1,1 +1,1 @@
-console.log("pppppnd    mobed ... ");
+console.log("i wan to go ... ");
