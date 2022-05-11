@@ -109,5 +109,5 @@
   },
   "exclude": ["./types"],
 
-  "files": ["src/app.ts", "src/analytics.ts"]
+  "files": ["config_section_3/src/app.ts", "config_section_3/src/analytics.ts"]
 }
